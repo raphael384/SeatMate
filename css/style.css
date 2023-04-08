@@ -1,0 +1,252 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
+
+* {
+    font-family: 'Space Grotesk';
+}
+
+body {
+    --apricot: rgb(246, 225, 214);
+    --melon: #ffb4a2ff;
+    --pastel-pink: rgba(250, 97, 102, 0.885);
+    --english-lavender: #b5838dff;
+    --old-lavender: #6d6875ff;
+}
+
+body {
+    position: relative;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background: var(--apricot);
+}
+
+.title {
+    font-size: 50px;
+    color: var(--pastel-pink);
+    text-align: center;
+}
+
+
+
+
+.cool {
+    pointer-events: none;
+    position: absolute;
+    transform: rotate(20deg);
+    right: 15%;
+    top: 15%;
+    width: 100px;
+    transition: opacity 1s;
+    animation: floating-cool 10s infinite linear;
+}
+
+
+.hand {
+    pointer-events: none;
+    position: absolute;
+    transform: rotate(-0.4turn) scaleX(-1);
+    width: 100px;
+    bottom: -10px;
+    right: 15%;
+    animation: floating-hand 10s infinite linear;
+
+}
+
+
+.like {
+    pointer-events: none;
+    position: absolute;
+    transform-origin: left;
+    transform: scaleX(-1) rotate(-30deg);
+    transform-style: preserve-3d;
+    left: 20%;
+    top: 15%;
+    animation: floating-like 15s infinite ease-in-out;
+
+}
+
+
+
+/* CARTE */
+
+.map {
+    position: relative;
+    margin-top: 60px;
+    display: grid;
+    width: 90%;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 30px;
+    grid-column-gap: 40px;
+    grid-template-rows: repeat(5, 75px);
+    margin-bottom: 50px;
+    padding: 50px;
+    /* From https://css.glass */
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 32px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(10.1px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    z-index: initial;
+}
+
+.map>* {
+    border-radius: px;
+}
+
+.double-table,
+.triple-table {
+    display: flex;
+
+}
+
+
+
+.prof {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    grid-column: 2/3;
+    background-color: var(--melon);
+    border-radius: 10px;
+    border: solid var(--english-lavender) 2px;
+
+}
+
+
+.first-table {
+    grid-column: 1/2;
+}
+
+.last {
+    grid-column: 2/3;
+}
+
+.first,
+.middle,
+.second {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    height: 100%;
+    /* background: black; */
+    opacity: 1;
+    transition: all 0.2s ease-in-out;
+    cursor: pointer;
+    background-color: var(--melon);
+    transition: background 0.3s;
+
+}
+
+.first {
+    border-radius: 10px 0 0 10px;
+}
+
+.first,
+.middle {
+    box-sizing: border-box;
+    border-right: var(--pastel-pink) solid 2px;
+
+}
+
+.triple-table>* {
+    width: 33.333%;
+}
+
+/* .triple-table .third {
+    width: 34%;
+    box-sizing: border-box;
+    border-right: var(--pastel-pink) solid 2px;
+} */
+
+
+
+/* .second {
+    background: white;
+} */
+
+.third,
+.second {
+    border-radius: 0 10px 10px 0;
+}
+
+
+.owner {
+    color: var(--old-lavender);
+    font-size: x-large;
+    margin: 4px;
+    transition: all 0.01s ease-in-out;
+}
+
+.first:hover,
+.middle:hover,
+.second:hover {
+    /* opacity: 0.7;
+    transform: scaleY(1.1);
+    border-radius: 2px; */
+    background: rgb(196, 170, 237);
+}
+
+@keyframes floating-cool {
+    0% {
+        transform: translate(0px, 0px) rotate(20deg);
+    }
+
+    25% {
+        transform: translate(10px, -10px) rotate(20deg);
+    }
+
+    50% {
+        transform: translate(20px, 0px) rotate(20deg);
+    }
+
+    75% {
+        transform: translate(10px, 10px) rotate(20deg);
+    }
+
+    100% {
+        transform: translate(0px, 0px) rotate(20deg);
+    }
+}
+
+@keyframes floating-like {
+    0% {
+        transform: scaleX(-1) rotate(-30deg);
+    }
+
+    
+
+    50% {
+        transform: scaleX(-1) rotate(-40deg);
+    }
+
+    
+
+    100% {
+        transform: scaleX(-1) rotate(-30deg);
+    }
+}
+
+@keyframes floating-hand {
+    0% {
+        transform: translate(0px, 0px) rotate(-0.4turn) scaleX(-1);
+    }
+
+    25% {
+        transform: translate(10px, -10px) rotate(-0.4turn) scaleX(-1);
+    }
+
+    50% {
+        transform: translate(20px, 0px) rotate(-0.4turn) scaleX(-1);
+    }
+
+    75% {
+        transform: translate(10px, 10px) rotate(-0.4turn) scaleX(-1);
+    }
+
+    100% {
+        transform: translate(0px, 0px) rotate(-0.4turn) scaleX(-1);
+    }
+}
