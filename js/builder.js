@@ -1,4 +1,4 @@
-axios.get('http://90.105.108.82:3001/data')
+axios.get('https://90.105.108.82:3001/data')
   .then(response => {
     // console.log(response.data);
 

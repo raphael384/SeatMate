@@ -6,7 +6,7 @@ for (const element of tables) {
     element.addEventListener('click', event => {
 
         if (localStorage.getItem("autho") != 'false') {
-                axios.post("http://90.105.108.82:3001/table-request", {
+                axios.post("https://90.105.108.82:3001/table-request", {
                 name: localStorage.getItem("name"),
                 position: element.id
             }).then(response => {
